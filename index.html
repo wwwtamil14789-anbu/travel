@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .curve {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+
+    }
+
+
+    nav {
+        display: flex;
+        justify-content: space-evenly;
+        position: relative;
+        align-items: center;
+    }
+
+    .nav-links ul {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        gap: 100px;
+        padding-top: 15px;
+
+        /* text-decoration: none; */
+    }
+
+    .nav-links ul li a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .logo {
+        /* flex: 1; */
+        padding-top: 5px;
+    }
+
+    .sign-up {
+        /* padding-left: 40px; */
+        border: 2px solid black;
+        padding: 5px;
+        margin-top: -5px;
+        border-radius: 5px;
+    }
+
+    /* MAIN */
+
+    .m-cont {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .main-head h3 {
+        color: red;
+        font-size: 15PX;
+        font-weight: bold;
+    }
+
+    .main-head h1 {
+        font-size: 60px;
+    }
+
+    .main-head h2 {
+        font-size: 50px;
+    }
+
+    .main-btn {
+        display: flex;
+        gap: 100px;
+
+    }
+
+    .find {
+        border: 2px solid;
+        width: fit-content;
+        padding: 7px;
+        border-radius: 5px;
+        background-color: orange;
+        color: white;
+        height: 37px;
+        border-radius: 10px;
+    }
+
+    .play {
+        background-color: rgb(235, 226, 228);
+        border: 2px transparent;
+        width: fit-content;
+        padding: 5px;
+        height: 35px;
+        border-radius: 5px;
+        /* vertical-align: text-bottom; */
+        margin-top: 2px;
+        border-radius: 20px;
+        color: orange;
+    }
+
+    .fa-solid fa-circle-play .main-btn i {
+        font-size: 15px;
+    }
+
+    .main-img1 {
+        position: relative;
+        z-index: -1;
+    }
+
+    .main-img2 {
+        position: absolute;
+        margin-top: -700px;
+        margin-left: 200px;
+    }
+
+    .main-img3 {
+        position: absolute;
+        margin-top: -650px;
+        margin-left: 650px;
+    }
+
+    .cat-head {
+        text-align: center;
+    }
+
+    .c1 {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .group {
+        width: 200px;
+        text-align: center;
+        /* text-align: justify; */
+        border: 2px transparent;
+        border-radius: 20px;
+    }
+
+    .group p {
+        font-size: small;
+    }
+
+    .group p b {
+        font-size: medium;
+    }
+
+    .group img {
+        align-self: center;
+        margin-top: 5px;
+    }
+
+    .group:hover {
+        transition: 0.3s;
+        transform: scale(1.1);
+        background-color: aliceblue;
+    }
+
+    .card-header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .f1 {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .destination-head {
+        text-align: center;
+    }
+
+    .cont-step {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 150px;
+    }
+
+    .s-head {
+        padding-left: 190px;
+    }
+
+    .steps {
+        display: flex;
+        gap: 10px;
+    }
+
+    .steps h6 {
+        color: grey;
+    }
+
+    .content {
+        padding-left: 20px;
+        border: 2px solid transparent;
+        background-color: azure;
+        border-radius: 20px;
+        width: 300px;
+        height: 400px;
+        margin-top: -100px;
+        margin-right: 300px;
+
+    }
+
+    .content-info {
+        padding-left: 20px;
+    }
+
+    .content-info p {
+        color: gray;
+    }
+
+    .content-info i {
+        color: gray;
+    }
+
+    .content-foot {
+        display: flex;
+        justify-content: space-between;
+        color: gray;
+    }
+
+    .content-foot i {
+        padding-top: 10px;
+    }
+
+    .testimonials {
+        display: flex;
+        /* makes it flex */
+        align-items: center;
+        /* vertically align items */
+        justify-content: space-evenly;
+        /* space between title and review */
+        gap: 200px;
+        /* space between two sections */
+        /* max-width: 1000px;
+        /* padding: 40px 20px; */
+        margin-top: 50px;
+    }
+
+    .review {
+        position: relative;
+        z-index: -1;
+    }
+
+    .review img {
+        border-radius: 30px;
+        position: absolute;
+        margin-top: -30px;
+        margin-left: -20px;
+        z-index: 2;
+        width: 50px;
+    }
+
+    .company {
+        display: flex;
+        gap: 150px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .subscribe {
+        justify-self: center;
+        text-align: center;
+        border: 2px solid black;
+        padding: 70px;
+        border-radius: 50px 0px 0px 0px;
+        background-color: lavender;
+        width: 1200px;
+        position: relative;
+        z-index: -1;
+    }
+
+    .sub-head {
+        padding-bottom: 50px;
+        word-spacing: 10px;
+        font-style: 20px;
+    }
+
+    .sub-search input {
+        height: 50px;
+        width: 350px;
+        border-radius: 10px;
+        border: none;
+        padding-left: 50px;
+        /* z-index: -1; */
+        position: relative;
+    }
+
+    .sub-search i {
+        z-index: 2;
+        position: absolute;
+        padding-top: 20px;
+        padding-left: 10px;
+    }
+
+    .sub-search button {
+        padding: 13px 25px;
+        border-radius: 10px;
+        margin-left: 10px;
+        background-color: orangered;
+        color: white;
+    }
+
+    .telegram {
+        position: absolute;
+        /* margin-left: -500px; */
+        z-index: 2;
+        padding-left: 1080px;
+        margin-top: -100px;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 100px;
+    }
+
+    .foot-head h3 {
+        font-weight: bold;
+    }
+
+    .footer h5 {
+        font-weight: bold;
+    }
+
+    .foot-head p {
+        width: 300px;
+        overflow-wrap: break-word;
+
+    }
+
+    .footer ul {
+        list-style-type: none;
+    }
+
+    .foot-icons i {
+        font-size: 25px;
+    }
+
+    .foot-icons img {
+        /* margin-left: 20px; */
+        margin-top: -10px;
+    }
+
+    .dropdown select {
+        border: none;
+        background-color: transparent;
+    }
+
+    /* media query section */
+
+    /* Mobiles (up to 600px) */
+    @media (max-width: 900px) {
+        nav {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .nav-links ul {
+            flex-direction: column;
+            gap: 20px;
+            padding: 0;
+        }
+
+        .sign-up {
+            margin: auto;
+        }
+
+        .m-cont {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .main-head h1 {
+            font-size: 30px;
+        }
+
+        .main-head h2 {
+            font-size: 24px;
+        }
+
+        .main-btn {
+            flex-direction: column;
+            justify-self: center;
+            align-items: center;
+            gap: 15px;
+            /* margin-left: 70px; */
+            margin-bottom: 50px;
+        }
+
+        .main-img1 img {
+            max-width: 100%;
+            height: auto;
+            margin-left: -120px;
+        }
+
+        .main-img2,
+        .main-img3 {
+            display: none;
+        }
+
+        .c1 {
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .f1 {
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cont-step {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .steps {
+            margin-left: 15px;
+        }
+
+        .s-head {
+            text-align: center;
+            margin-left: -170px;
+        }
+
+        .testimonials {
+            flex-direction: column;
+            align-self: center;
+            gap: 80px;
+
+        }
+
+        .company {
+            flex-direction: column;
+            gap: 20px;
+            align-self: center;
+        }
+
+        .alitalia {
+            margin-top: 50px;
+        }
+
+        .qantas {
+            margin-top: 20px;
+        }
+
+        .subscribe {
+            width: 400px;
+            justify-self: center;
+            /* align-self:center; */
+        }
+
+        .subscribe input {
+            width: 300px;
+        }
+
+        .subscribe button {
+            margin-top: 40px;
+        }
+
+        .footer {
+            flex-direction: column;
+            justify-self: center;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+        }
+
+        .foot-icons {
+            margin-left: -10px;
+        }
+
+        .telegram {
+            display: none;
+        }
+    }
+</style>
+
+<body>
+    <!-- nav bar -->
+
+    <div class="curve">
+        <img src="fimg/Decore.png" alt="">
+    </div>
+    <nav>
+        <div class="logo">
+            <img src="fimg/Logo.png" alt="">
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="#">Destinations</a></li>
+                <li><a href="#">Hotels</a></li>
+                <li><a href="#">Bookings</a></li>
+                <li><a href="#">Flights</a></li>
+                <li><a href="#">Login</a></li>
+                <li class="sign-up"><a href="#">Signup</a></li>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <!-- <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                EN
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">SPANISH</a></li>
+                <li><a class="dropdown-item" href="#">RUSSIAN</a></li>
+                <li><a class="dropdown-item" href="#">TURKISH</a></li>
+            </ul> -->
+            <select name="country" id="country">
+                <option value="india">India</option>
+                <option value="usa">USA</option>
+                <option value="uk">UK</option>
+                <option value="australia">Australia</option>
+                <option value="canada">Canada</option>
+            </select>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <!-- main page -->
+    <section class="main-page">
+
+        <div class="m-cont">
+            <div class="main-head">
+                <h3>BEST DESTINATION AROUND THE WORLD</h3>
+
+                <h1>TRAVEL,ENJOY</h1>
+                <h2>And Live a New</h2>
+                <h2>Full Life</h2>
+                <br>
+                <br>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, iure!</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus,</p>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <br>
+                <br>
+                <div class="main-btn">
+                    <div class="find">
+                        <p>Find More</p>
+                    </div>
+                    <div class="play">
+                        <p><i class="fa-solid fa-circle-play"></i> Play Demo</p>
+                    </div>
+                </div>
+            </div>
+            <section>
+                <!-- <div>
+                <img src="travel-img/Group.png" alt="">
+            </div> -->
+                <div>
+                    <div class="main-img1">
+                        <img src="fimg/Traveller.png" alt="">
+                        <div class="main-img2">
+                            <img src="fimg/plane.png" alt="">
+                        </div>
+                        <div class="main-img3">
+                            <img src="fimg/plane.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- catogary -->
+
+    <section>
+
+        <div class="cat-head">
+            <h6>CATEGORY</h6>
+            <h3>We Offer Best Services</h3>
+        </div>
+        <br>
+        <br>
+        <div class="c1">
+
+            <div class="card group">
+                <img src="fimg/Group 48.png" alt="" width="80px">
+                <br>
+                <p><b>Calculated Weather</b></p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, nam!</p>
+            </div>
+
+            <!-- <div class="card group">
+                <img src="travel-img/Rectangle 158.png" alt="" style="position: relative; z-index: 1;">
+                <img src="travel-img/plane (1).png" width="120px" style="position: absolute; margin-top: -20px; margin-bottom: 10px; z-index: 2;">
+                <br>
+                <p><b>Calculated Weather</b></p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, nam!</p>
+            </div> -->
+
+            <div class="card group">
+                <img src="fimg/Rectangle 158.png" alt="" style="position: relative; z-index: 1;">
+                <img src="fimg/plane.png" alt="" width="120px"
+                    style=" margin-top: -20px; position: absolute; z-index: 1; ">
+                <br>
+                <p style="padding-top: 20px;"><b>Best flights</b></p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, nam!</p>
+            </div>
+
+
+            <div class="card group">
+                <img src="fimg/Group 50.png" alt="" width="70px">
+                <br>
+                <p><b>local Events</b></p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, nam!</p>
+            </div>
+
+            <div class="card group">
+                <img src="fimg/Group 49.png" alt="" width="80px">
+                <br>
+                <p><b>Customization</b></p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, nam!</p>
+            </div>
+
+        </div>
+
+    </section>
+    <br>
+    <br>
+
+    <section class="destination">
+
+        <div class="destination-head">
+            <p>Top Selling</p>
+            <h2>Top Destination</h2>
+        </div>
+        <br>
+        <div class="f1">
+
+            <div class="card" style="width: 300px;  ">
+                <img src="fimg/destination-1.png" style="border-radius: 5px;">
+
+                <div class="card-header">
+                    <p>Rome,Italy</p>
+                    <p>$5.42k</p>
+                </div>
+                <div class="card-body">
+                    <P><i class="fa-solid fa-location-arrow"></i> 10 days Trip</P>
+                </div>
+            </div>
+
+            <div class="card" style="width: 300px;  ">
+                <img src="fimg/destination-2.jpg" style="border-radius: 5px;">
+
+                <div class="card-header">
+                    <p>London,UK</p>
+                    <p>$4.2k</p>
+                </div>
+                <div class="card-body">
+                    <P><i class="fa-solid fa-location-arrow"></i> 12 days Trip</P>
+                </div>
+            </div>
+
+            <div class="card" style="width: 300px;  ">
+                <img src="fimg/destination-3.png" style="border-radius: 5px; height: 430px;">
+
+                <div class="card-header">
+                    <p>London,UK</p>
+                    <p>$4.2k</p>
+                </div>
+                <div class="card-body">
+                    <P><i class="fa-solid fa-location-arrow"></i> 12 days Trip</P>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <br>
+    <br>
+    <!-- Easy steps to book -->
+
+    <section class="esp">
+
+        <div class="s-head">
+            <h5>Easy and Fast</h5>
+
+            <div class="b-head">
+                <h1>Book Your Next Trip</h1>
+                <h1> In 3 Easy Steps</h1>
+            </div>
+        </div>
+        <br>
+        <br>
+        <!-- Steps -->
+        <div class="cont-step">
+
+            <div>
+                <div class="steps">
+                    <div>
+                        <img src="fimg/Group 7.png" alt="">
+                    </div>
+                    <div>
+                        <h6>Choose Destination</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, fuga.</p>
+                    </div>
+                </div>
+                <br>
+                <div class="steps">
+                    <div>
+                        <img src="fimg/Group 12.png" alt="">
+                    </div>
+                    <div>
+                        <h6>Make Payment</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, fuga.</p>
+                    </div>
+                </div>
+                <br>
+                <div class="steps">
+                    <div>
+                        <img src="fimg/Group 11.png" alt="">
+                    </div>
+                    <div>
+                        <h6>Reach Airport on Selected Date</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, fuga.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <img src="fimg/sc 1.png" alt="">
+                <br>
+                <br>
+                <div class="content-info">
+                    <!-- <h5>Trip To Greece</h5> -->
+                    <!-- <p>14-june| by Robbin John</p> -->
+                    <!-- <div>
+                        <i class="fa-solid fa-leaf"></i>
+                        <i class="fa-solid fa-bookmark"></i>
+                        <i class="fa-solid fa-location-arrow"></i>
+                    </div>
+                    <br>
+                    <div class="content-foot">
+                        <p><br><br><i class="fa-solid fa-city"></i> 24 people going</p>
+                        <i class="fa-regular fa-heart"></i>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+
+    <!-- testimonials section -->
+    <section>
+        <div class="testimonials">
+            <div class="title">
+                <h6>TESTIMONIALS</h6>
+                <br>
+                <h1>What People Say</h1>
+                <h1>About Us.</h1>
+            </div>
+
+            <div class="review">
+                <img src="fimg/image.png" alt="">
+                <div class="card" style="width: 400px;">
+                    <div class="card-header">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro quisquam aliquid esse nemo ab
+                            eius soluta maiores quia? Iste ad exercitationem recusandae saepe nulla animi alias impedit
+                            officia omnis neque!</p>
+                    </div>
+                    <div class="card-body">
+                        <strong>Mike Taylor</strong>
+                        <p>New York, America</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <!-- company's -->
+
+    <section>
+        <div class="company">
+            <div class="axon">
+                <img src="fimg/image1.png" alt="" width="100px">
+            </div>
+            <div class="jetstar">
+                <img src="fimg/image2.png" alt="" width="150px">
+            </div>
+            <div class="expedia">
+                <img src="fimg/image3.png" alt="" width="120px">
+            </div>
+            <div class="qantas">
+                <img src="fimg/image4.png" alt="" width="120px">
+            </div>
+            <div class="alitalia">
+                <img src="fimg/image5.png" alt="" width="100px">
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <!-- subscribe -->
+
+    <section>
+
+        <div class="subscribe">
+            <div class="telegram">
+                <img src="fimg/Group 77.png" alt="">
+            </div>
+            <div class="sub-head">
+                <h2>Subscribe to get information,latest news and other</h2>
+                <h2>intesting offers about jadoo</h2>
+            </div>
+
+            <div class="sub-search">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="text" placeholder="your email">
+                <button type="button">subscribe</button>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+
+    <!-- footer -->
+
+    <section>
+        <div class="footer">
+
+            <div class="foot-head" style="text-wrap: 100px;">
+                <h3>Jadoo</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus, dolorum!</p>
+            </div>
+
+            <div class="foot-company">
+                <h5 style="padding-left: 20px;">Company</h5>
+                <ul>
+                    <li>About</li>
+                    <li>Careers</li>
+                    <li>Mobile</li>
+                </ul>
+            </div>
+
+            <div class="foot-contact">
+                <h5 style="padding-left: 25px;">Contact</h5>
+                <ul>
+                    <li>Help/FAQ</li>
+                    <li>Press</li>
+                    <li>Affilates</li>
+                </ul>
+            </div>
+
+            <div class="foot-more">
+                <h5 style="padding-left: 40px;">More</h5>
+                <ul>
+                    <li>Airlinefees</li>
+                    <li>Airline</li>
+                    <li>Low tare tips</li>
+                </ul>
+            </div>
+
+            <div class="foot-icons">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-square-instagram"></i>
+                <i class="fa-brands fa-square-x-twitter"></i>
+                <br>
+                <p>Discover our app</p>
+                <img src="fimg/Google Play.png" alt="">
+
+                <img src="fimg/Play Store.png" alt="">
+            </div>
+        </div>
+
+    </section>
+    <br>
+
+    <!-- copy rights -->
+    <div style="text-align: center;">
+        <h6>All rights reserve@jadoo</h6>
+    </div>
+</body>
+
+</html>
